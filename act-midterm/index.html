@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edryl De Leon | Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fb;
+            color: #253047;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background: #101b35;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            margin-left: 12px;
+        }
+
+        .navbar .nav-link:hover {
+            color: #72b7ff;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #101b35, #174b91);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .profile-picture {
+            width: 210px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px #0004;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            font-weight: bold;
+        }
+
+        .hero span {
+            color: #73c5ff;
+        }
+
+        .section-padding {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #1769c2;
+        }
+
+        .custom-card {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 5px 22px #172b4d0c;
+            transition: 0.25s;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #172b4d18;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .progress {
+            height: 9px;
+            margin-bottom: 22px;
+            background: #e4eaf2;
+        }
+
+        .progress-bar {
+            background: #1769c2;
+        }
+
+        .project-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-section {
+            background: #101b35;
+            color: white;
+        }
+
+        .contact-section .section-title span {
+            color: #73c5ff;
+        }
+
+        .contact-link {
+            color: #73c5ff;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            background: #0b1326;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media print {
+            .navbar, .no-print, footer {
+                display: none !important;
+            }
+
+            .hero, .contact-section {
+                background: white !important;
+                color: black !important;
+                padding: 30px 0;
+            }
+
+            .section-padding {
+                padding: 25px 0;
+            }
+
+            .custom-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">ED. PORTFOLIO</a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero" id="home">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-md-4 text-center">
+                
+                <img src="images/profile.jpg"
+                    alt="Edryl De Leon profile photo"
+                    class="profile-picture"
+                    onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';">
+
+                <div id="photoFallback"
+                    class="profile-picture mx-auto align-items-center justify-content-center"
+                    style="display:none; background:white; color:#1769c2; font-size:3.5rem; font-weight:bold;">
+                    ED
+                </div>
+            </div>
+
+            <div class="col-md-8 text-center text-md-start">
+                <p class="text-uppercase mb-2">Hello, welcome to my website!</p>
+                <h1>I'm Edryl De Leon</h1>
+                <h3 class="mb-3">Web Developer &amp; Designer</h3>
+
+                <p class="lead">
+                    I create modern, responsive, and user-friendly
+                    website designs.
+                </p>
+
+                <a href="#about" class="btn btn-primary btn-lg mt-3 me-2">
+                    About Me
+                </a>
+
+                <button onclick="window.print()"
+                    class="btn btn-outline-light btn-lg mt-3 no-print">
+                    Print Resume
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="section-padding" id="about">
+    <div class="container">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="custom-card text-center">
+                    <p>
+                        I am a creative and detail-oriented aspiring
+                        Web Developer and Designer interested in building
+                        modern and responsive websites. I enjoy learning
+                        new technologies, solving problems, and improving
+                        my skills in web development and design.
+                    </p>
+                    <p class="mb-0">
+                        My goal is to create useful digital experiences
+                        while continuing to grow in the IT industry.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-white" id="skills">
+    <div class="container">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h4 class="mb-4">Technical Skills</h4>
+
+                    <div class="skill-label">
+                        <span>HTML</span><span>Basic</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:70%"></div>
+                    </div>
+
+                    <div class="skill-label">
+                        <span>CSS</span><span>Basic</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:65%"></div>
+                    </div>
+
+                    <div class="skill-label">
+                        <span>Bootstrap</span><span>Basic</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" style="width:55%"></div>
+                    </div>
+
+                    <div class="skill-label">
+                        <span>JavaScript</span><span>Learning</span>
+                    </div>
+                    <div class="progress mb-0">
+                        <div class="progress-bar" style="width:35%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h4 class="mb-4">Personal Skills</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Creative Thinking</li>
+                        <li class="list-group-item">Problem Solving</li>
+                        <li class="list-group-item">Time Management</li>
+                        <li class="list-group-item">Attention to Detail</li>
+                        <li class="list-group-item">Adaptability</li>
+                        <li class="list-group-item">Willingness to Learn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding" id="projects">
+    <div class="container">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="project-icon">🌐</div>
+                    <h4>Personal Portfolio</h4>
+                    <p>
+                        A personal website introducing my skills,
+                        background, and interests.
+                    </p>
+                    <span class="badge text-bg-primary">HTML</span>
+                    <span class="badge text-bg-secondary">CSS</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="project-icon">📄</div>
+                    <h4>Resume Website</h4>
+                    <p>
+                        A responsive online resume that presents
+                        my education, skills, and contact details.
+                    </p>
+                    <span class="badge text-bg-primary">Bootstrap</span>
+                    <span class="badge text-bg-secondary">HTML</span>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="custom-card">
+                    <div class="project-icon">🎨</div>
+                    <h4>Web Design Project</h4>
+                    <p>
+                        A sample web design concept focused on
+                        a clean layout and easy navigation.
+                    </p>
+                    <span class="badge text-bg-primary">UI Design</span>
+                    <span class="badge text-bg-secondary">CSS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding bg-white" id="education">
+    <div class="container">
+        <h2 class="section-title">Education &amp; <span>Experience</span></h2>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h4 class="mb-3">🎓 Education</h4>
+                    <h5>Information Technology</h5>
+                    <p class="mb-1">Eastwoods Professional College</p>
+                    <p class="text-muted">2022 – 2026</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <h4 class="mb-3">💼 Experience</h4>
+                    <h5>Web Development Practice</h5>
+                    <p>
+                        Building sample websites and practicing
+                        HTML, CSS, Bootstrap, and responsive layouts.
+                    </p>
+                    <p class="text-muted mb-0">
+                        Add your actual employment or internship details here.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding contact-section" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <div class="custom-card text-center">
+                    <h4 class="mb-4">Let's Connect!</h4>
+
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a class="contact-link"
+                            href="mailto:Edryldeleon@gmail.com">
+                            Edryldeleon@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a class="contact-link" href="tel:+639480352497">
+                            +63 948 0352 497
+                        </a>
+                    </p>
+                    
+
+                    <p class="mb-0">
+                        <strong>Location:</strong><br>
+                        Bataan, Philippines
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <p class="mb-0">
+        &copy; 2026 Edryl De Leon | Personal Portfolio
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
